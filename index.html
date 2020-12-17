@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>hero</title>
+  </head>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous" />
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <style>
+
+    ul{
+      list-style: none;
+    }
+
+    #heroes{
+      display: inline;
+    }
+
+    .card{
+      width: 200px;
+      float: left;
+      min-height: 800px;
+      margin: 10px;
+    }
+
+    .battle img{
+      height: 200px;
+    }
+
+    .card-body{
+      min-height: 490px;
+      padding: 0.5rem;
+    }
+
+    table.stats tr td:first-child{
+      text-align:center;
+    }
+
+    table.stats tr td{
+      padding: 5px;
+    }
+
+    table.stats .capabilities{
+      /*text-align:left !important;*/
+    }
+
+    
+
+  </style>
+
+  <body>
+
+
+    <!--
+
+    <i class="material-icons md-48">face</i>
+    <i class="material-icons md-48">favorite</i>
+    <i class="material-icons md-48">grade</i>
+    <i class="material-icons md-48">upgrade</i>
+    <i class="material-icons md-48">my_location</i>
+    <i class="material-icons md-48">pest_control_rodent</i>
+    <i class="material-icons md-48">arrow_upward</i>
+    <i class="material-icons md-48">arrow_downward</i>
+    <i class="material-icons md-48"></i>
+    <i class="material-icons md-48">traffic</i>
+
+  -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="images/logo.jpg" width="30" height="30" alt="">
+      </a>
+      <a class="navbar-brand" href="#">StatsHeroes!</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a id="menu_heroes" class="nav-link statsheroes_menu active" href="#heroes_bloc">Heroes</a>
+          </li>
+          <li class="nav-item">
+            <a id="menu_enemies" class="nav-link statsheroes_menu" href="#enemies_bloc">Enemies</a>
+          </li>
+          <li class="nav-item">
+            <a id="menu_fight" class="nav-link statsheroes_menu" href="#fight_bloc">Fight</a>
+          </li>
+          <li class="nav-item">
+            <a id="menu_stats" class="nav-link statsheroes_menu" href="#stats_bloc">Stats</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <div class="container">
+
+
+      <div id="heroes_block">
+        <h1>Heroes</h1>
+        <div class="row">
+          <div id="heroes"></div>
+        </div>
+      </div>
+
+      
+
+      <div id="enemies_block" class="d-none">
+        <h1>Enemies</h1>
+        <div class="row">
+          <div id="enemies"></div>
+        </div>
+      </div>
+
+
+      <div id="fight_block" class="d-none">
+        <h1>Fight !</h1>
+      </div>
+
+
+      <div id="stats_block" class="d-none"> 
+      </div>
+
+
+
+
+
+    <script type="text/javascript" src="game/displayManager.js"></script>
+    <script type="text/javascript" src="game/eventLog.js"></script>
+
+    <!-- HEROES-->
+
+    <script type="text/javascript" src="entities/entity.js"></script>
+
+    <script type="text/javascript" src="entities/heroes/heroTypes.js"></script>
+    <script type="text/javascript" src="entities/heroes/hero.js"></script>
+
+    <script type="text/javascript" src="entities/heroes/human.js"></script>
+    <script type="text/javascript" src="entities/heroes/elf.js"></script>
+    <script type="text/javascript" src="entities/heroes/dwarf.js"></script>
+
+
+    <!-- ENEMIES-->
+    <script type="text/javascript" src="entities/enemies/enemyTypes.js"></script>
+    <script type="text/javascript" src="entities/enemies/enemy.js"></script>
+
+    <script type="text/javascript" src="entities/enemies/assassin.js"></script>
+    <script type="text/javascript" src="entities/enemies/berserker.js"></script>
+    <script type="text/javascript" src="entities/enemies/dragon.js"></script>
+    <script type="text/javascript" src="entities/enemies/golem.js"></script>
+    <script type="text/javascript" src="entities/enemies/griffin.js"></script>
+    <script type="text/javascript" src="entities/enemies/werewolf.js"></script>
+
+
+    
+    <script type="text/javascript" src="game/battle.js"></script>
+    <script type="text/javascript" src="game/battleSimulation.js"></script>
+
+    <script type="text/javascript" src="main.js"></script>
+
+
+  </body>
+</html>
